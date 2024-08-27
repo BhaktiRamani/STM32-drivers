@@ -1,0 +1,16 @@
+16:30:07 **** Incremental Build of configuration Debug for project 4_Port_manipulation ****
+make -j8 all 
+arm-none-eabi-gcc -o "4_Port_manipulation.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/bhakti/STM32CubeIDE/workspace_1.14.0/4_Port_manipulation/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_Port_manipulation.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_Port_manipulation.elf
+ 
+arm-none-eabi-size  4_Port_manipulation.elf 
+arm-none-eabi-objdump -h -S 4_Port_manipulation.elf  > "4_Port_manipulation.list"
+   text	   data	    bss	    dec	    hex	filename
+   1508	     12	   1572	   3092	    c14	4_Port_manipulation.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_Port_manipulation.list
+ 
+
+16:30:08 Build Finished. 0 errors, 0 warnings. (took 226ms)
+

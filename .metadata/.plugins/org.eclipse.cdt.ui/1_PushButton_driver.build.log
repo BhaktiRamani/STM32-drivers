@@ -1,0 +1,16 @@
+15:22:22 **** Incremental Build of configuration Debug for project 1_PushButton_driver ****
+make -j8 all 
+arm-none-eabi-gcc -o "1_PushButton_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/bhakti/STM32CubeIDE/workspace_1.14.0/1_PushButton_driver/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_PushButton_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1_PushButton_driver.elf
+ 
+arm-none-eabi-size  1_PushButton_driver.elf 
+arm-none-eabi-objdump -h -S 1_PushButton_driver.elf  > "1_PushButton_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+    888	      8	   1568	   2464	    9a0	1_PushButton_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1_PushButton_driver.list
+ 
+
+15:22:23 Build Finished. 0 errors, 0 warnings. (took 218ms)
+

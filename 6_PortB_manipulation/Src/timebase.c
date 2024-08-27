@@ -1,0 +1,87 @@
+#include "timebase.h"
+#include "stm32f4xx.h"
+
+#define ONE_SEC_LOAD 	180000000  			/*Clock = 180 Mhz means 18000000 cycles will run in 1 second*/
+
+#define CTRL_ENABLE  	(1U << 0)
+#define CTRL_TICKINT 	(1U << 1)
+#define CTRL_CLCKSRC 	(1U << 2)
+#define CTRL_COUNTFLAG  (1U << 16)
+
+#define MAX_DELAY 		0XFFFFFFFFU
+
+// Define the number of clock cycles in one nanosecond
+#define CLOCK_CYCLES_PER_NS (ONE_SEC_LOAD / 1000000000);
+
+#define PRECISION 180; 			// clock frequency/ 1 us
+
+volatile uint32_t current_counter;
+
+
+void delay_us(uint32_t delay_us)
+{
+
+	uint32_t current_counter = counter; 					        // 2^32-1 2^32-2 10-> tick ->9
+	(current_counter + delay_us > 2^32 - 1) ?  % 2^32-1;
+    while(counter - current_
+    		counter < delay_us){
+    }
+}
+
+void timebase_init(void)
+{
+	/*Reload the timer with number of cycles per second*/
+	SysTick -> LOAD = PRECISION; 				//  minimum precision 1 us
+
+	/*Clear SysTick current value register*/
+	SysTick -> VAL = 0;
+
+	/*Select internal clock source*/
+	SysTick -> CTRL = CTRL_CLCKSRC;
+
+	/*Enable interrupt*/
+	SysTick -> CTRL |= CTRL_TICKINT ;
+
+	/*Enable SysTick*/
+	SysTick -> CTRL |= CTRL_ENABLE ;
+
+	/*Enable global interrupts*/
+	__enable_irq();
+}
+
+void SysTick_Handler(void)
+{
+	// counter is updated everty 1 us
+	counter++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

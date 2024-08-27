@@ -1,0 +1,17 @@
+18:58:44 **** Incremental Build of configuration Debug for project 5_RoundRobinScheduler ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/osKernel.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/osKernel.d" -MT"Src/osKernel.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/osKernel.o"
+arm-none-eabi-gcc -o "5_RoundRobinScheduler.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/bhakti/STM32CubeIDE/workspace_1.14.0/5_RoundRobinScheduler/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="5_RoundRobinScheduler.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 5_RoundRobinScheduler.elf
+ 
+arm-none-eabi-size  5_RoundRobinScheduler.elf 
+arm-none-eabi-objdump -h -S 5_RoundRobinScheduler.elf  > "5_RoundRobinScheduler.list"
+   text	   data	    bss	    dec	    hex	filename
+   1576	      8	   2808	   4392	   1128	5_RoundRobinScheduler.elf
+Finished building: default.size.stdout
+ 
+Finished building: 5_RoundRobinScheduler.list
+ 
+
+18:58:44 Build Finished. 0 errors, 0 warnings. (took 484ms)
+

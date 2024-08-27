@@ -1,0 +1,6 @@
+../Src/port.c:15:6:_port_init	1
+../Src/port.c:45:6:write_address	1
+../Src/port.c:50:10:read_eeprom	1
+../Src/port.c:71:6:write_eeprom	1
+../Src/port.c:76:6:we_pulse	1
+../Src/port.c:88:6:disable_SDK	1

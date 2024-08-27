@@ -1,0 +1,44 @@
+#include "timer6.h"
+
+
+
+void TIM6Config(void)
+{
+	/*Steps*/
+	/* 1. Enable Timer Clock
+	 * 2. Set the prescaler and the ARR
+	 * 3. Enable the Timer, and wait for the update flag to set
+	 */
+
+	// Enable Timer clock
+	RCC -> APB1ENR |= (1<<4); 		//enable the timer6 clock
+
+	//Set the prescaler (setting clock for timer counter)
+	TIM6 -> PSC = 42-1; 			// 42Mhz/42 = 1 Mhz -- 1us
+	TIM6 -> ARR = 0xffff; 			//Max ARR value
+
+	//Enable the Timer, and wait for the update flag to set
+	TIM6 -> CR1  |= (1<<0); 		//Enable the counter
+	while(!(TIM6 -> SR & (1<<0))); 		//UIF - Updated Interrupt flag. This bit is set by hardware when registers are updated.
+
+}
+
+void Delay_us(uint16_t us)
+{
+	/*---------STEPS-------------*/
+	/* 1. Reset the Counter
+	 * 2. Wait for the Counter to reach the entered value. As each count will take
+	 * 1 us, the total waiting time will be required us delay   */
+	TIM6->CNT = 0;
+	while( TIM6 -> CNT < us){};
+
+
+}
+
+void Delay_ms(uint16_t ms)
+{
+	for(uint16_t i = 0; i<ms; i++)
+	{
+		Delay_us (1000); 			//delay of 1 ms
+	}
+}

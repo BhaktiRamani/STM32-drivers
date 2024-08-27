@@ -1,0 +1,17 @@
+11:30:38 **** Incremental Build of configuration Debug for project 8_timer6 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_timer6.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/bhakti/STM32CubeIDE/workspace_1.14.0/8_timer6/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_timer6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_timer6.elf
+ 
+arm-none-eabi-size  8_timer6.elf 
+arm-none-eabi-objdump -h -S 8_timer6.elf  > "8_timer6.list"
+   text	   data	    bss	    dec	    hex	filename
+   1028	      8	   1568	   2604	    a2c	8_timer6.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_timer6.list
+ 
+
+11:30:39 Build Finished. 0 errors, 0 warnings. (took 325ms)
+

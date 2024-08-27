@@ -1,0 +1,26 @@
+22:13:39 **** Build of configuration Debug for project 3_uart_driver ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F446xx -c -I../Inc -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include" -I"/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+../Src/uart.c: In function 'uart_write':
+../Src/uart.c:60:15: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   60 |         while(!(USART2 -> SR) & (1 << 7)) {}
+      |               ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "3_uart_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/bhakti/STM32CubeIDE/workspace_1.14.0/3_uart_driver/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3_uart_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3_uart_driver.elf
+ 
+arm-none-eabi-size  3_uart_driver.elf 
+arm-none-eabi-objdump -h -S 3_uart_driver.elf  > "3_uart_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1100	      8	   1568	   2676	    a74	3_uart_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3_uart_driver.list
+ 
+
+22:13:40 Build Finished. 0 errors, 1 warnings. (took 324ms)
+

@@ -1,0 +1,7 @@
+/home/bhakti/STM32CubeIDE/workspace_1.14.0/0_led_driver/chip headers/Drivers/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	16	static
+../Src/osKernel.c:29:6:osKernelStackInit	16	static
+../Src/osKernel.c:56:6:osSchedulerLaunch	4	static,ignoring_inline_asm
+../Src/osKernel.c:95:9:osKernelAddThreads	24	static,ignoring_inline_asm
+../Src/osKernel.c:129:6:osKernelInit	4	static
+../Src/osKernel.c:134:6:osKernelLaunch	16	static
+../Src/osKernel.c:162:29:System_Handler	0	static,ignoring_inline_asm

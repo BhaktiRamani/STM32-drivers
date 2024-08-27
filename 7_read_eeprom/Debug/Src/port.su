@@ -1,0 +1,3 @@
+../Src/port.c:14:6:_port_init	4	static
+../Src/port.c:41:6:write_address	16	static
+../Src/port.c:46:10:read_eeprom	8	static

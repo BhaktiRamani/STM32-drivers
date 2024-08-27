@@ -1,0 +1,6 @@
+../Src/port.c:15:6:_port_init	4	static
+../Src/port.c:45:6:write_address	16	static
+../Src/port.c:50:10:read_eeprom	8	static
+../Src/port.c:71:6:write_eeprom	16	static
+../Src/port.c:76:6:we_pulse	8	static
+../Src/port.c:88:6:disable_SDK	8	static
